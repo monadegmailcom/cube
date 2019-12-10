@@ -1,0 +1,17 @@
+{
+  "name": "test-three",
+  "version": "1.0.0",
+  "description": "Test three webgl",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "three": "^0.111.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
