@@ -1,18 +1,26 @@
-import { BoxGeometry, Mesh, MeshBasicMaterial, Scene, PerspectiveCamera, WebGLRenderer } from "three";
+import * as T from "three";
 
-var scene = new Scene();
-var camera = new PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-var renderer = new WebGLRenderer();
+// configure renderer
+var renderer = new T.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-var geometry = new BoxGeometry( 1, 1, 1 );
-var material = new MeshBasicMaterial( { color: 0x00ff00 } );
-var cube = new Mesh( geometry, material );
-scene.add( cube );
-
+// configure camera
+var camera = new T.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 camera.position.z = 5;
+
+// configure light
+var light = new T.AmbientLight( 0x404040 );
+
+// configure cube
+var geometry = new T.BoxGeometry( 1, 1, 1 );
+var material = new T.MeshNormalMaterial();
+var cube = new T.Mesh( geometry, material );
+
+// configure scene
+var scene = new T.Scene();
+scene.add( cube, light );
+scene.add( light );
 
 var animate = function () {
     requestAnimationFrame( animate );
