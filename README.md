@@ -7,7 +7,7 @@
 
 ## (Re-)Build project
 
-- run `nmp start` for an incremental build on source changes (faster)
+- run `npm start` for an incremental build on source changes (faster)
   , point your browser to `localhost:8080`
 - or build project without webserver with `npm run build`
 
